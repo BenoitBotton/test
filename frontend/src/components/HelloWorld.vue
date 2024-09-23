@@ -9,7 +9,7 @@ const data = reactive({
 
 function greet() {
   Greet(data.name).then(result => {
-    data.resultText = result
+    data.resultText = result.text
   })
 }
 
