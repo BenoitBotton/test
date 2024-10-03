@@ -3,6 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
+
+	"github.com/wailsapp/wails/v2/pkg/menu"
+	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
 // App struct
@@ -28,4 +31,8 @@ func (a *App) Greet(name string) Msg {
 
 type Msg struct {
 	Text string `json:"text"`
+}
+
+func (a *App) Quit(_ *menu.CallbackData) {
+	runtime.Quit(a.ctx)
 }
